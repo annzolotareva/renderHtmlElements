@@ -13,11 +13,12 @@ const DomElement = function (selector, height, width, bg, fontSize) {
       elem = document.createElement("p");
       elem.id = selector;
     }
-    elem.style.cssText = ` height: ${height}, this.width: ${width}, this.background-color: ${bg}, this.fontSize: ${fontSize} `;
-    elem.innerText = "DomElement";
+    elem.style.cssText = ` height: ${this.height}; width: ${this.width}; background-color: ${this.bg}; font-size: ${this.fontSize} `;
+    elem.innerText = "Dom Element";
+    document.body.append(elem);
   };
 };
 
-const domElement1 = new DomElement("#first", 10, 10, "yellow", 5);
+const domElement1 = new DomElement(".first", 12 + "%", 17 + "%", "yellow", 50 + "px");
 
 domElement1.render();
